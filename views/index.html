@@ -1,10 +1,17 @@
 {% extends "layout.html" %}
 
 {% block bodyClass %}homepage{% endblock %}
-
+<div class="bg">
+  <img src="images/background_new-page-001_Fotor (1).png">
+</div>
 
 {% block header %}
+   
   <header>
+    
+    <img src="/images/download.png" width="140" height="100" alt="Logo" id="logo">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
+    
      <link href="//fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
     <ul class="menu">
       <li><a href="/index">HOME</a></li>
@@ -12,14 +19,23 @@
       <li><a href="/events">EVENTS</a></li>
       <li><a href="/layout">LAYOUT</a></li>
     </ul>
-    
-    <img src="/images/download.png" width="140" height="100" alt="Logo" id="logo">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
+<br>
     <h1>Sign up!</h1>
     <p class="add-to-mailing-list">
       Add yourself to our mailing list to stay ahead of the fun and get details on upcoming events!
     </p>
+     <br>
+    <br>
+  
     <a href="#" class="myButton">Click here</a> 
+    <br>
+    <br>
+      <br>
+    <br>
+      <br>
+    <br>
+      <br>
+    <br>
   </header>
 {% endblock %}
 
@@ -27,20 +43,24 @@
 {% block mainContent %}
 <div class="welcome">
   <link href="//fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
-  <p>Welcome to Saturnalia. We allow you to create, post, promote, and track events from anytime, anywhere.</p>
+  <br>
   <p>
+    Welcome to Saturnalia. We allow you to create, post, promote, and track events from anytime, anywhere.</p>
+  <p>
+    <br>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
   <h2>
     UPCOMING EVENTS
   </h2>
-  <p>Below you will find a list of all of the awesome events around you!</p>
+  <p>Below you will find a list of all of the awesome things going on around you!</p>
   
   <div>
     {% include "fragments/events-list.html" %}
   </div>
-  
+  <br>
 </div>
 
  
 {% endblock %}
+
