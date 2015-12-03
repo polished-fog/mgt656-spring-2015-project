@@ -1,20 +1,21 @@
 body{
+  background-image: url("http://s29.postimg.org/pg3kxtl7b/background_new_page_001_Fotor_1.png");
+  position: center;
   font-family: 'Montserrat', sans-serif; 
   color: blue;
   font-size: 14px;
 }
 .homepage{
-  
   background: url("http://s29.postimg.org/pg3kxtl7b/background_new_page_001_Fotor_1.png")
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 .welcome{
   background-color:white;
+  opacity: 0.75;
 }
 h1 {
-  font-size: 55px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -36,10 +37,11 @@ header {
   text-align: center;
   color: white;
   font-family: 'PT Sans', sans-serif;
+  
 }
-p.add-to-mailing-list {
+.add-to-mailing-list {
   color:white;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 
@@ -89,3 +91,4 @@ a {
 .form-errors {
 	color: red;
 }
+
