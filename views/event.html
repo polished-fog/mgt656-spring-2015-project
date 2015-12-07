@@ -1,6 +1,42 @@
 {% extends "layout.html" %}
 
+
+
+
 {% block mainContent %}
+<style>
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    p {
+      color: white;
+      font-size: 14px;
+    }
+    </style>
+    
+    <header>
+         <link href="//fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
+    <ul class="menu">
+      <li><a href="/index">HOME</a></li>
+      <li><a href="/about">ABOUT</a></li>
+      <li><a href="/events">EVENTS</a></li>
+      <li><a href="/layout">LAYOUT</a></li>
+    </ul>
+</header>
+    
+<h1>
+  / Events /
+</h1>
+<br>
+<p>
+  A detailed list of all the events around you can be found here!
+  Tickets for any event, if required can be purchased on this page.
+</p>
+<br>
+<br>
   <div>
     {% include "fragments/events-list.html" %}
   </div>
@@ -12,7 +48,7 @@
 
 {% block footer %}
   <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">About us</a>.
+    Look at me customize the footer. The time now is {{time}}.
+    <a href="/about">About</a>.
   </footer>
 {% endblock %}
