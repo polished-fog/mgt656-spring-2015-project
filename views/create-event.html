@@ -2,6 +2,33 @@
 
 {% block mainContent %}
 
+<style>
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    p {
+        text-align: center;
+        color: white;
+    }
+</style>
+<header>
+        <img src="/images/download.png" width="140" height="100" alt="Logo" id="logo">
+        <link href="//fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
+    <ul class="menu">
+      <li><a href="/">HOME</a></li>
+      <li><a href="/about">ABOUT</a></li>
+      <li><a href="/events">EVENTS</a></li>
+    </ul>
+    <br>
+</header>
+
+  <h1>/ CREATE YOUR EVENT! /</h1>
+  <p>Please include the information of your event in the fields below. (image must be gif or png)
+  </p>
+
   {% if errors %}
     <div>
       <p>Please correct the following errors!</p>
