@@ -6,9 +6,10 @@ body{
   font-size: 14px;
 }
 .homepage{
-  background: url("http://s29.postimg.org/pg3kxtl7b/background_new_page_001_Fotor_1.png")
+  background: url("http://s29.postimg.org/pg3kxtl7b/background_new_page_001_Fotor_1.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .welcome{
   background-color:white;
@@ -28,11 +29,21 @@ img {
   margin: 0px 0px 0px 0px;
   border: 0px solid white;
   border-radius: 0px;
-  position: fixed;
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
+}
+.logoimage {
+  margin: 1px 1px 1px 1px;
+  border: 0px solid white;
+  border-radius: 0px;
+  top: 0;
+  left:0 ;
+  position:fixed;
 }
 
+.teamnames {
+  font-size: 24px;
+}
 header {
   text-align: center;
   color: white;
