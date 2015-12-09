@@ -1,25 +1,57 @@
+<!-- Google Analytics Content Experiment code -->
+<script>
+function utmx_section(){}function utmx(){}(function(){var
+k='112862110-0',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
+
 {% extends "layout.html" %}
 
 {% block bodyClass %}homepage{% endblock %}
-
+<div class="bg">
+  <img src="images/background_new-page-001_Fotor (1).png">
+</div>
 
 {% block header %}
+   
   <header>
+    <div class=logoimage>
+    <img src="/images/download.png" width="140" height="100" alt="Logo" id="logo">
+    </div>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
+    
      <link href="//fonts.googleapis.com/css?family=Lato" rel='stylesheet' type='text/css'>
     <ul class="menu">
-      <li><a href="/index">HOME</a></li>
+      <li><a href="/">HOME</a></li>
       <li><a href="/about">ABOUT</a></li>
       <li><a href="/events">EVENTS</a></li>
-      <li><a href="/layout">LAYOUT</a></li>
     </ul>
-    
-    <img src="/images/download.png" width="140" height="100" alt="Logo" id="Logo">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
+<br>
     <h1>Sign up!</h1>
     <p class="add-to-mailing-list">
       Add yourself to our mailing list to stay ahead of the fun and get details on upcoming events!
     </p>
+     <br>
+    <br>
+  
     <a href="#" class="myButton">Click here</a> 
+    <br>
+    <br>
+      <br>
+    <br>
+      <br>
+    <br>
+      <br>
+    <br>
   </header>
 {% endblock %}
 
@@ -27,22 +59,24 @@
 {% block mainContent %}
 <div class="welcome">
   <link href="//fonts.googleapis.com/css?family=Open+Sans" rel='stylesheet' type='text/css'>
-  <p>Welcome to Saturnalia. We allow you to create, post, promote, and track events from anytime, anywhere.</p>
+  <br>
   <p>
+    Welcome to Saturnalia. We allow you to create, post, promote, and track events from anytime, anywhere.</p>
+  <p>
+    <br>
     <a id="new" href="/events/new">Create a new event</a>
   </p>
   <h2>
     UPCOMING EVENTS
   </h2>
+  <p>Below you will find a list of all of the awesome things going on around you!</p>
   
-   <ul class= "events">
-    <li class="event" id="SOM House Party"></li>
-    <li class="event" id="BBQ party for hackers and nerds"></li>
-    <li class="event" id="BBQ party for managers"></li>
-    <li class="event" id="Cooking lessons for the busy business student"></li>
-  </ul>
-  
+  <div>
+    {% include "fragments/events-list.html" %}
+  </div>
+  <br>
 </div>
 
  
 {% endblock %}
+
