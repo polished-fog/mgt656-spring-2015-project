@@ -1,1 +1,45 @@
 {% extends "layout.html" %}
+
+    {% block mainContent %}
+    
+    {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul>
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+    
+    
+    <h1 id="title">{{event.title}}</h1>
+    <p><span id="date">{{event.date}}</span></p>
+    <p><span id="location">{{event.location}}</span></p>
+    <p><span id="attendees">{{event.attendees}}</span></p>
+    <p>{{event.image}}</p>
+    
+    <ul>
+        {% for attendees in event.attending %}
+          <li>{{attendees}}</li>
+        {% endfor %}
+      </ul>
+    
+      
+<form id="rsvp-event" method="POST">
+      
+<label for="email">Email:</label>
+      
+<input type="email" name="email" id="email">        
+     
+<input type="submit" id="submit">
+     
+</form>
+
+      {% endblock %}
+      
+   
+
+
+
