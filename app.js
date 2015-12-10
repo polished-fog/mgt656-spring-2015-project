@@ -25,4 +25,6 @@ app.post('/events/new', eventControllers.saveEvent);
 app.get('/events/:id', eventControllers.eventDetail);
 app.post('/events/:id', eventControllers.rsvp);
 app.get('/api/events', eventControllers.api);
+app.get('/donation', eventControllers.donation);
+
 module.exports = app;
