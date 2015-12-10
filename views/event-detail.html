@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 
-{% block mainContent %}
-<style>
+    {% block mainContent %}
+    
+    <style>
     h1 {
         text-align: center;
         color: white;
@@ -23,5 +24,75 @@
     </ul>
     <br>
 </header>
+    
+    
+    {% if errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+    
+    
+    <h1 id="title">{{event.title}}</h1>
+    <p><span id="date">{{event.date}}</span></p>
+    <p><span id="location">{{event.location}}</span></p>
+    <p><span id="attendees">{{event.attending}}</span></p>
+    <p><img src="{{event.image}}" id="image"></p>
+    
+    <ul id="attendees"></ul>
+        {% for attendees in event.attending %}
+          <li>{{attendees}}</li>
+        {% endfor %}
+    </ul>
+    
+      
+<form id="rsvp-event" method="POST">
+      
+<label for="email">Email:</label>
+      
+<input type="email" name="email" id="email">        
+     
+<button type="submit">Submit</button> 
 
-{% endblock %}
+</form>
+
+<a href="/donation" class="donation">Please donate</a>
+
+<!-- Load the Content Experiment JavaScript API client for the experiment -->
+<script src="//www.google-analytics.com/cx/api.js?experiment=rJ3sLofUTumkhSOfxoKzzQ"></script>
+
+<!-- Load the JQuery library -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>
+// Define JavaScript for each page variation of this experiment.
+  var pageVariations = [
+    function() {},  // Original: Do nothing. This will render the default HTML.
+    function() {    // Variation 1: remove "a" elements with class "donation"
+      $( 'a' ).remove( '.donation' );
+    }
+  ];
+
+// Wait for the DOM to load, then execute the view for the chosen variation.
+$(document).ready(function(){
+  // Ask Google Analytics which variation to show the user.
+  var chosenVariation = cxApi.chooseVariation('rJ3sLofUTumkhSOfxoKzzQ');
+  // Execute the chosen view
+  pageVariations[chosenVariation]();
+}
+);
+</script>
+
+
+      {% endblock %}
+      
+   
+
+
+
+
