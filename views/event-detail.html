@@ -29,7 +29,7 @@
     {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
-      <ul>
+      <ul class="form-errors">
         {% for error in errors %}
           <li>{{error}}</li>
         {% endfor %}
@@ -41,14 +41,14 @@
     <h1 id="title">{{event.title}}</h1>
     <p><span id="date">{{event.date}}</span></p>
     <p><span id="location">{{event.location}}</span></p>
-    <p><span id="attendees">{{event.attendees}}</span></p>
-    <p>{{event.image}}</p>
+    <p><span id="attendees">{{event.attending}}</span></p>
+    <p><img src="{{event.image}}" id="image"></p>
     
-    <ul>
+    <ul id="attendees"></ul>
         {% for attendees in event.attending %}
           <li>{{attendees}}</li>
         {% endfor %}
-      </ul>
+    </ul>
     
       
 <form id="rsvp-event" method="POST">
@@ -57,7 +57,7 @@
       
 <input type="email" name="email" id="email">        
      
-<input type="submit" id="submit">
+<button type="submit">Submit</button> 
      
 </form>
 
