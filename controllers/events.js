@@ -110,16 +110,16 @@ function saveEvent(request, response){
 }
 
 function findMaxId (xxx){
-    var maxId = 0;
-    for (var i = 0; i < xxx.length; i++){
-      if (maxId < xxx[i].id ) {
-        maxId = xxx[i].id;
-      }
-    } 
-    return maxId;
-  }
+  var maxId = 0;
+  for (var i = 0; i < xxx.length; i++){
+    if (maxId < xxx[i].id ) {
+      maxId = xxx[i].id;
+    }
+  } 
+  return maxId;
+}
 
-function eventDetail (request, response) {
+function eventDetail (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
@@ -127,22 +127,24 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
 }
 
+
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
   }
 
-  if(validator.isEmail(request.body.email)){
+  if(validator.isEmail(request.body.email) 
+  && request.body.email.toLowerCase().indexOf('yale')!== -1){
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
-    response.render('event-detail.html', contextData);    
+    response.render('event-detail.html', contextData); 
   }
-
 }
+  
 
 /** API Documentation**/
 function api(request, response){
