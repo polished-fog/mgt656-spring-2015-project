@@ -74,7 +74,7 @@
   var pageVariations = [
     function() {},  // Original: Do nothing. This will render the default HTML.
     function() {    // Variation 1: remove "a" elements with class "donation"
-      $( 'a' ).remove( '.donation' );
+      $( 'a.donation' ).text( 'Please support' );
     }
   ];
 

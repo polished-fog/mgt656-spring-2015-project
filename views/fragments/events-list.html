@@ -4,7 +4,6 @@
       <a href ="/events/{{event.id}}">{{event.title}}</a>.
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
-      <a href="/donation" class="donation">Please donate</a>
     </li>
   {% endfor %}
 </ul>
@@ -30,33 +29,6 @@
 $(document).ready(function(){
   // Ask Google Analytics which variation to show the user.
   var chosenVariation = cxApi.chooseVariation('6iS_ZqFJSmWtUP9EOwBElQ');
-  // Execute the chosen view
-  pageVariations[chosenVariation]();
-}
-);
-</script>
-
-
-<!-- Donation Experiment -->
-<!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=rJ3sLofUTumkhSOfxoKzzQ"></script>
-
-<!-- Load the JQuery library -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
-<script>
-// Define JavaScript for each page variation of this experiment.
-  var pageVariations = [
-    function() {},  // Original: Do nothing. This will render the default HTML.
-    function() {    // Variation 1: remove "a" elements with class "donation"
-      $( 'a' ).remove( '.donation' );
-    }
-  ];
-
-// Wait for the DOM to load, then execute the view for the chosen variation.
-$(document).ready(function(){
-  // Ask Google Analytics which variation to show the user.
-  var chosenVariation = cxApi.chooseVariation('rJ3sLofUTumkhSOfxoKzzQ');
   // Execute the chosen view
   pageVariations[chosenVariation]();
 }
